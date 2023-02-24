@@ -7,7 +7,7 @@
 /vendor
 
 
-.env.backup
+.env.backupy
 .env.production
 Homestead.json
 Homestead.yaml

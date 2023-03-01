@@ -9,6 +9,8 @@ class Factura extends Model
 {
     use HasFactory;
 
+
+
     protected $casts = [
         'idFactura' => 'autoincrement',
         'fechaFactura' => 'date',
@@ -32,4 +34,10 @@ class Factura extends Model
     {
         return $this->belongsTo(Empresa::class);
     }
+
+    public function productos()
+    {
+        return $this->belongsToMany(Productos::class);
+    }
+
 }

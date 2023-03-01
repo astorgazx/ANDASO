@@ -29,3 +29,10 @@ Route::get('/productos', 'App\Http\Controllers\Productos@index');
 Route::get("/clientes", "App\Http\Controllers\ClienteController@index");
 
 Route::get("/proveedores", "App\Http\Controllers\ProveedorController@index");
+
+Route::get("/empleados", "App\Http\Controllers\EmpleadoController@index");
+
+Route::get("/facturas", "App\Http\Controllers\FacturaController@index");
+
+
+

@@ -26,4 +26,14 @@ class Productos extends Model
         return $this->belongsToMany(Proveedor::class);
     }
 
+    public function factura()
+    {
+        return $this->belongsToMany(Factura::class);
+    }
+
+    public function empleado()
+    {
+        return $this->belongsToMany(Empleado::class);
+    }
+
 }

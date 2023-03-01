@@ -21,5 +21,14 @@ class Empresa extends Model
         'codPostalEmpresa' => 'string',
         'rfcEmpresa' => 'string',
     ];
-    
+
+    public function correo()
+    {
+        return $this->hasMany(CorreoEmpresa::class);
+    }
+
+    public function telefono()
+    {
+        return $this->hasMany(TelefonoEmpresa::class);
+    }
 }

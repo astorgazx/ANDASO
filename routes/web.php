@@ -27,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/productos', 'App\Http\Controllers\Productos@index');
 
 Route::get("/clientes", "App\Http\Controllers\ClienteController@index");
+
+Route::get("/proveedores", "App\Http\Controllers\ProveedorController@index");

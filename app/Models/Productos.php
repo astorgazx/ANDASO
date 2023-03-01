@@ -9,13 +9,21 @@ class Productos extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nombre',
-        'descripcion',
-        'precio',
-        'stock',
-        'categoria_id',
-        'imagen',
+    protected $casts = [
+        'idProducto' => 'autoincrement',
+        'nombreProducto' => 'string',
+        'noPiezaInterna' => 'string',
+        'precioProducto' => 'float',
+        'cantidadProducto' => 'integer',
+        'descripcionProducto' => 'string',
+        // Se almacenara una imagen
+        'dibujoProducto' => 'string',
+        'especificacionProducto' => 'string',
     ];
+
+    public function proveedor()
+    {
+        return $this->belongsToMany(Proveedor::class);
+    }
 
 }

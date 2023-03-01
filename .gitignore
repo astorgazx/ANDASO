@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.ide
 /.vscode
+vendor/composer/installed.php
+vendor/composer/autoload_static.php
+vendor/composer/autoload_classmap.php

@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Empleado extends Model
 {
     use HasFactory;
@@ -48,4 +50,5 @@ class Empleado extends Model
     {
         return $this->belongsToMany(Productos::class);
     }
+
 }

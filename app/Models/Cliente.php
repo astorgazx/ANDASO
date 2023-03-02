@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Cliente extends Model
 {
     use HasFactory;
@@ -26,5 +27,14 @@ class Cliente extends Model
         'contrasenaCliente' => 'string',
         'telefonoCliente' => 'string',
     ];
+
+    protected $hidden = [
+        'contrasenaCliente',
+    ];
+
+    public function findForAuthentication($emailCliente)
+    {
+        return $this->where('emailCliente', $emailCliente)->first();
+    }
 
 }

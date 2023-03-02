@@ -5,9 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedor extends Model
+// Permite autenticar el proveedor
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
+
+
+
+
+class Proveedor extends Model implements Authenticatable
 {
     use HasFactory;
+    use BasicAuthenticatable;
 
     protected $table = 'Proveedor';
 
@@ -29,7 +37,8 @@ class Proveedor extends Model
 
     public function correo()
     {
-        return $this->hasMany(CorreoProv::class);
+        // El nombre la tabla de la base de datos es CorreoProv
+        return $this->hasMany($related = CorreoProv::class);
     }
     public function telefono()
     {

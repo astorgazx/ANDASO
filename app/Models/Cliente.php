@@ -3,19 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-// Permite autenticar el cliente
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
+use Illuminate\Foundation\Auth\User as Model;
 
 
 
 
-class Cliente extends Model implements Authenticatable
+class Cliente extends Model
 {
     use HasFactory;
-    use BasicAuthenticatable;
+
+    protected $guard = ['idCliente'];
 
     protected $casts = [
         'idCliente' => 'autoincrement',
@@ -39,9 +36,10 @@ class Cliente extends Model implements Authenticatable
         'contrasenaCliente',
     ];
 
-    public function findForAuthentication($emailCliente)
+    public function getAuthPassword()
     {
-        return $this->where('emailCliente', $emailCliente)->first();
+
+        return $this->contrasenaCliente;
     }
 
 }

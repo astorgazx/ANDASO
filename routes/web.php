@@ -34,7 +34,15 @@ Route::get("/empleados", "App\Http\Controllers\EmpleadoController@index");
 
 Route::get("/facturas", "App\Http\Controllers\FacturaController@index");
 
+Route::prefix('Empleados')->as('Empleados.')->group(function () { // Esta línea es la que se encarga de decirle a Laravel que prefijo debe usar
+    Route::get('home', 'App\Http\Controllers\Home\EmpleadosHomeController@index')->name('home'); // Esta línea es la que se encarga de decirle a Laravel que ruta debe usar
 
+    Route::namespace('App\Http\Controllers\Auth\Login')->group(function () { // Esta línea es la que se encarga de decirle a Laravel que namespace debe usar
+        Route::get('login', 'EmpleadosLoginController@showLoginForm')->name('login'); // Esta línea es la que se encarga de decirle a Laravel que ruta debe usar
+        Route::post('login', 'EmpleadosLoginController@login')->name('login.submit');
+        Route::post('logout', 'EmpleadosLoginController@logout')->name('logout');
+    });
+});
 
 
 

@@ -10,7 +10,7 @@ class Productos extends Controller
     public function index()
     {
         $productos = \App\Models\Productos::all();
-        return view('productos.index', compact('productos'));
+        return view('productos.all-productos', compact('productos'));
     }
 
     // Metodo para agregar un producto

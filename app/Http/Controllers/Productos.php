@@ -29,6 +29,23 @@ class Productos extends Controller
         return redirect()->route('productos.index');
     }
 
+    // Metodo para editar un producto
+    public function showEditProducto($id)
+    {
+        $producto = \App\Models\Productos::find($id);
+        return view('productos.edit', compact('producto'));
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $producto = \App\Models\Productos::find($id);
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->precio = $request->precio;
+        $producto->save();
+        return redirect()->route('productos.index');
+    }
+
 
 
 

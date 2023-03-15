@@ -127,10 +127,4 @@
     </div>
 </div>
 
-@php
-    $productos = DB::table('productos')->get();
-@endphp
-
-
-
 

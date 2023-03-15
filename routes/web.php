@@ -44,5 +44,8 @@ Route::prefix('Empleados')->as('Empleados.')->group(function () { // Esta línea
     });
 });
 
+// Rutas para agregar un producto
+Route::get('/productos/add', 'App\Http\Controllers\Productos@showRegistroProducto');
+Route::post('/productos/add', 'App\Http\Controllers\Productos@add') -> name('productos.add');
 
 

@@ -16,7 +16,7 @@ class Productos extends Controller
     // Metodo para agregar un producto
     public function showRegistroProducto()
     {
-        return view('productos.add');
+        return view("admin.productos.add");
     }
 
     public function add(Request $request)

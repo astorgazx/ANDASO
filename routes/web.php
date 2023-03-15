@@ -49,3 +49,5 @@ Route::get('/productos/add', 'App\Http\Controllers\Productos@showRegistroProduct
 Route::post('/productos/add', 'App\Http\Controllers\Productos@add') -> name('productos.add');
 
 
+
+

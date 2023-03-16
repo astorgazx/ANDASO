@@ -35,6 +35,12 @@ class Productos extends Controller
         $producto = \App\Models\Productos::find($id);
         return view('productos.edit', compact('producto'));
     }
+    //Metodo para ver un producto
+    public function showProducto($id)
+    {
+        $producto = \App\Models\Productos::find($id);
+        return view('productos.individual-producto', compact('producto'));
+    }
 
     public function edit(Request $request, $id)
     {

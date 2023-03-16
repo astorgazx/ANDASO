@@ -48,6 +48,9 @@ Route::prefix('Empleados')->as('Empleados.')->group(function () { // Esta línea
 Route::get('/productos/add', 'App\Http\Controllers\Productos@showRegistroProducto');
 Route::post('/productos/add', 'App\Http\Controllers\Productos@add') -> name('productos.add');
 
+// Rutas para ver un producto
+Route::get('/productos/{id}', 'App\Http\Controllers\Productos@showProducto');
+
 
 
 

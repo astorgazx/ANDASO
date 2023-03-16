@@ -4,22 +4,19 @@
 
 <!-- Mostrar todos los productos usando cards de Bootstrap y un boton de compra que redirige a la vista individal del producto   -->
 
-@foreach ( $productos as $producto )
-    <div class = "row" >
-        <div class = "col-md-4" >
-            <img src = "{{ $producto->imagen }}" alt = "" class = "img-fluid" >
+<div class="card-group">
+    @foreach ( $productos as $producto )
+        <div class="card">
+            <img class="card-img-top" src="{{ $producto->imagen }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ $producto->nombre }}</h5>
+                <p class="card-text">{{ $producto->descripcion }}</p>
+                <p class="card-text">{{ $producto->precio }}</p>
+                <a href="{{ route('producto', $producto->id) }}" class="btn btn-primary">Comprar</a>
+            </div>
         </div>
-        <div class = "col-md-8" >
-            <h2> {{ $producto->nombre }} </h2>
-            <p> {{ $producto->descripcion }} </p>
-            <p> {{ $producto->precio }} </p>
-            <p> {{ $producto->stock }} </p>
-            <p> {{ $producto->categoria }} </p>
-            <p> {{ $producto->created_at }} </p>
-            <p> {{ $producto->updated_at }} </p>
-            <a href = "" class = "btn btn-primary" > Comprar </a>
-        </div>
-    </div>
-@endforeach
+    @endforeach
+</div>
+
 
 @endsection

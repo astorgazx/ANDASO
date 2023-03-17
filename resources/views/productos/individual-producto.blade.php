@@ -4,8 +4,6 @@
 
 <!-- Cargar la vista individual del producto -->
 
-$producto = App\Producto::find($id);
-
 <div class="row">
     <div class="col-md-auto">
         <h3 class="text-center">{{ $producto->nombre }}</h3>

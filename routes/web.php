@@ -41,12 +41,29 @@ Route::prefix('Empleados')->as('Empleados.')->group(function () { // Esta línea
         Route::get('login', 'EmpleadosLoginController@showLoginForm')->name('login'); // Esta línea es la que se encarga de decirle a Laravel que ruta debe usar
         Route::post('login', 'EmpleadosLoginController@login')->name('login.submit');
         Route::post('logout', 'EmpleadosLoginController@logout')->name('logout');
+
+
+
     });
 });
 
 // Rutas para agregar un producto
 Route::get('/productos/add', 'App\Http\Controllers\Productos@showRegistroProducto');
 Route::post('/productos/add', 'App\Http\Controllers\Productos@add') -> name('productos.add');
+
+// Rutas para ver un producto
+Route::get('/productos/{id}', 'App\Http\Controllers\Productos@showProducto');
+
+
+//Rutas para Administrador para gestionar productos
+Route::get('/admin/productos', 'App\Http\Controllers\Admin\Productos@index');
+Route::get('/admin/productos/add', 'App\Http\Controllers\Admin\Productos@showRegistroProducto');
+Route::post('/admin/productos/add', 'App\Http\Controllers\Admin\Productos@add') -> name('admin.productos.add');
+Route::get('/admin/productos/{id}', 'App\Http\Controllers\Admin\Productos@showProducto');
+Route::get('/admin/productos/edit/{id}', 'App\Http\Controllers\Admin\Productos@showEditProducto');
+Route::post('/admin/productos/edit/{id}', 'App\Http\Controllers\Admin\Productos@edit') -> name('admin.productos.edit');
+Route::get('/admin/productos/delete/{id}', 'App\Http\Controllers\Admin\Productos@delete');
+
 
 
 

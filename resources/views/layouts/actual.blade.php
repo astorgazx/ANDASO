@@ -13,19 +13,27 @@
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-md" style="background: #851e39;">
-            <div class="container-fluid"><a class="navbar-brand" href="#" style="color: rgb(239,228,156);">Distribuidora ANDASO</a>
+            <div class="container-fluid"><a class="navbar-brand" href="{{ route('home') }}" style="color: rgb(239,228,156);">Distribuidora ANDASO</a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navcol-1" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link active" href="#">Nuestros Productos</a>
+                        <li class="nav-item"><a class="nav-link active" href="">Nuestros Productos</a>
                         </li>
                         <li class="nav-item"><a class="nav-link active" href="#">! Forma parte de nuestra comunidad !</a>
                         </li>
                         <li class="nav-item"><a class="nav-link active" href="#">Eres Socio?</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" href="#">Cerrar Seccion</a>
+                        <!-- Si el usuario esta logeado poner su nombre -->
+                        <li class="nav-item"><a class="nav-link active" href="#">@if (Auth::check()) {{ Auth::user()->name }} @endif</a>
                         </li>
+                        <!-- Si el usuario esta logeado link para cerrar sesion -->
+                        <li class="nav-item"><a class="nav-link active" href="#">@if (Auth::check()) <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesion</a> @endif</a>
+                        </li>
+                        <!-- Si el usuario no esta logeado link para iniciar sesion -->
+                        <li class="nav-item"><a class="nav-link active" href="{{ route('login') }}">@if (!Auth::check()) Iniciar Sesion @endif</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

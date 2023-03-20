@@ -33,17 +33,17 @@ class Productos extends Model
         'especificacionProducto',
     ];
 
-    public function proveedor()
+    public function proveedor()  : BelongsToMany
     {
         return $this->belongsToMany(Proveedor::class);
     }
 
-    public function factura()
+    public function factura() : BelongsToMany
     {
         return $this->belongsToMany(Factura::class);
     }
 
-    public function empleado()
+    public function empleado() : BelongsToMany
     {
         return $this->belongsToMany(Empleado::class);
     }

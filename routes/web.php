@@ -64,6 +64,14 @@ Route::get('/admin/productos/edit/{id}', 'App\Http\Controllers\Productos@showEdi
 Route::post('/admin/productos/edit/{id}', 'App\Http\Controllers\Productos@edit') -> name('admin.productos.edit');
 Route::get('/admin/productos/delete/{id}', 'App\Http\Controllers\Productos@delete');
 
+//Rutas para Administrador para gestionar Proveedores
+Route::get('/admin/proveedores', 'App\Http\Controllers\ProveedorController@index') -> name('admin.proveedores');
+Route::get('/admin/proveedores/add', 'App\Http\Controllers\ProveedorController@showRegistroProveedor');
+Route::post('/admin/proveedores/add', 'App\Http\Controllers\ProveedorController@add') -> name('admin.proveedores.add');
+Route::get('/admin/proveedores/{id}', 'App\Http\Controllers\ProveedorController@showProveedor') -> name('admin.proveedores.show');
+Route::get('/admin/proveedores/edit/{id}', 'App\Http\Controllers\ProveedorController@showEditProveedor');
+Route::post('/admin/proveedores/edit/{id}', 'App\Http\Controllers\ProveedorController@edit') -> name('admin.proveedores.edit');
+Route::get('/admin/proveedores/delete/{id}', 'App\Http\Controllers\ProveedorController@delete') -> name('admin.proveedores.delete');
 
 
 

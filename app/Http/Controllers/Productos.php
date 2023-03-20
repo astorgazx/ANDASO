@@ -30,6 +30,9 @@ class Productos extends Controller
         $producto->especificacionProducto = $request->EspecificacionesInput;
         // Guardar la imagen
         $producto->dibujoProducto = $request->file('ImagenInput')->store('public');
+        $archivo = $request->file('ImagenInput');
+
+        $ruta = $archivo->store('public');
 
 
 

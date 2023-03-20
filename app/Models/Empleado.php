@@ -58,17 +58,17 @@ class Empleado extends Model
         'contrasenaEmpleado',
     ];
 
-    public function correo()
+    public function correo() : HasMany
     {
         return $this->hasMany(CorreoEmpleado::class);
     }
 
-    public function telefono()
+    public function telefono() : HasMany
     {
         return $this->hasMany(TelefonoEmpleado::class);
     }
 
-    public function productos()
+    public function productos() : BelongsToMany
     {
         return $this->belongsToMany(Productos::class);
     }

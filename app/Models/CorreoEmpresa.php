@@ -16,7 +16,7 @@ class CorreoEmpresa extends Model
         'idEmpresa' => 'integer',
     ];
 
-    public function empresa()
+    public function empresa() : BelongsTo
     {
         return $this->belongsTo(Empresa::class);
     }

@@ -25,17 +25,30 @@ class Factura extends Model
 
     ];
 
-    public function cliente()
+    protected $fillable = [
+        'fechaFactura',
+        'horaFactura',
+        'totalFactura',
+        'idCliente',
+        'idEmpresa',
+        'conceptoFactura',
+        'subTotalFactura',
+        'reciboPago',
+        'metodoPago',
+    ];
+
+
+    public function cliente() : BelongsTo
     {
         return $this->belongsTo(Cliente::class);
     }
 
-    public function empresa()
+    public function empresa() : BelongsTo
     {
         return $this->belongsTo(Empresa::class);
     }
 
-    public function productos()
+    public function productos() : BelongsToMany
     {
         return $this->belongsToMany(Productos::class);
     }

@@ -60,4 +60,6 @@ class Cliente extends Model
         return $this->contrasenaCliente;
     }
 
+    
+
 }

@@ -22,12 +22,12 @@ class Empresa extends Model
         'rfcEmpresa' => 'string',
     ];
 
-    public function correo()
+    public function correo() : HasMany
     {
         return $this->hasMany(CorreoEmpresa::class);
     }
 
-    public function telefono()
+    public function telefono() : HasMany
     {
         return $this->hasMany(TelefonoEmpresa::class);
     }

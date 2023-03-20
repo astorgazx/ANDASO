@@ -17,7 +17,7 @@ class CorreoEmpleado extends Model
         'idEmpleado' => 'integer',
     ];
 
-    public function empleado()
+    public function empleado() : BelongsTo
     {
         return $this->belongsTo(Empleado::class);
     }

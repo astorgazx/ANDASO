@@ -17,7 +17,7 @@ class CorreoProv extends Model
         'idProveedor' => 'integer',
     ];
 
-    public function proveedor()
+    public function proveedor() : BelongsTo
     {
         return $this->belongsTo(Proveedor::class);
     }

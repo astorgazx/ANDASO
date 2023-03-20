@@ -56,11 +56,11 @@ class Proveedor extends Model implements Authenticatable
         // El nombre la tabla de la base de datos es CorreoProv
         return $this->hasMany($related = CorreoProv::class);
     }
-    public function telefono()
+    public function telefono() : HasMany
     {
         return $this->hasMany(TelefonoProv::class);
     }
-    public function productos()
+    public function productos() : BelongsToMany
     {
         return $this->belongsToMany(Productos::class);
     }

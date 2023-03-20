@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class TelefonoProv extends Model
 {
@@ -17,7 +18,7 @@ class TelefonoProv extends Model
         'idProveedor' => 'integer',
     ];
 
-    public function proveedor()
+    public function proveedor() : BelongsTo
     {
         return $this->belongsTo(Proveedor::class);
     }

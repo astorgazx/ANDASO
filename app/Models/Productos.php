@@ -21,6 +21,18 @@ class Productos extends Model
         'especificacionProducto' => 'string',
     ];
 
+    protected $fillable = [
+        'idProducto',
+        'nombreProducto',
+        'noPiezaInterna',
+        'precioProducto',
+        'cantidadProducto',
+        'descripcionProducto',
+        // Se almacenara una imagen
+        'dibujoProducto',
+        'especificacionProducto',
+    ];
+
     public function proveedor()
     {
         return $this->belongsToMany(Proveedor::class);

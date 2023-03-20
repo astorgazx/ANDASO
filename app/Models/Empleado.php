@@ -36,6 +36,28 @@ class Empleado extends Model
         'contrasenaEmpleado',
     ];
 
+    protected $fillable = [
+        'idEmpleado',
+        'nombreEmpleado',
+        'apPaternoEmpleado',
+        'apMaternoEmpleado',
+        'paisEmpleado',
+        'estadoEmpleado',
+        'ciudadEmpleado',
+        'calleEmpleado',
+        'noExteriorEmpleado',
+        'noInteriorEmpleado',
+        'codPostalEmpleado',
+        'fechaNacimientoEmpleado',
+        'generoEmpleado',
+        'nssEmpleado',
+        'dniEmpleado',
+        'fechaIngresoEmpleado',
+        'activoEmpleado',
+        'usuarioEmpleado',
+        'contrasenaEmpleado',
+    ];
+
     public function correo()
     {
         return $this->hasMany(CorreoEmpleado::class);

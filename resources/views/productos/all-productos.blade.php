@@ -7,12 +7,12 @@
 <div class="card-group">
     @foreach ( $productos as $producto )
         <div class="card">
-            <img class="card-img-top" src="{{ $producto->imagen }}" alt="Card image cap">
+            <img class="card-img-top" src="{{ $producto->dibujoProducto }}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{ $producto->nombre }}</h5>
-                <p class="card-text">{{ $producto->descripcion }}</p>
-                <p class="card-text">{{ $producto->precio }}</p>
-                <a href="{{ route('producto', $producto->id) }}" class="btn btn-primary">Comprar</a>
+                <h5 class="card-title">{{ $producto->nombreProducto }}</h5>
+                <p class="card-text">{{ $producto->descripcionProducto }}</p>
+                <p class="card-text">{{ $producto->precioProducto }}</p>
+                <a href="{{ route('admin.productos.show', $producto->id) }}" class="btn btn-primary">Comprar</a>
             </div>
         </div>
     @endforeach

@@ -36,6 +36,24 @@ class Cliente extends Model
         'contrasenaCliente',
     ];
 
+    protected $fillable = [
+        'idCliente',
+        'nombreCliente',
+        'apPaternoCliente',
+        'apMaternoCliente',
+        'paisCliente',
+        'estadoCliente',
+        'ciudadCliente',
+        'calleCliente',
+        'noExteriorCliente',
+        'noInteriorCliente',
+        'codPostalCliente',
+        'fechaNacimientoCliente',
+        'emailCliente',
+        'contrasenaCliente',
+        'telefonoCliente',
+    ];
+
     public function getAuthPassword()
     {
 

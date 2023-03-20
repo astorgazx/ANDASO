@@ -35,6 +35,22 @@ class Proveedor extends Model implements Authenticatable
         'taxIDProveedor' => 'string',
     ];
 
+    protected $fillable = [
+        'idProveedor',
+        'nombreFiscalProveedor',
+        'paisProveedor',
+        'estadoProveedor',
+        'ciudadProveedor',
+        'calleProveedor',
+        'noExteriorProveedor',
+        'noInteriorProveedor',
+        'codPostalProveedor',
+        'rfcProveedor',
+        'immexProveedor',
+        'repaeProveedor',
+        'taxIDProveedor',
+    ];
+
     public function correo()
     {
         // El nombre la tabla de la base de datos es CorreoProv

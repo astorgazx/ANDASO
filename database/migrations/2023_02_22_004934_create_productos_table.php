@@ -14,6 +14,15 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombreProducto');
+            $table->string('noPiezaInterna');
+            $table->float('precioProducto');
+            $table->integer('cantidadProducto');
+            $table->string('descripcionProducto');
+            // Se almacenara una imagen
+            $table->string('dibujoProducto');
+            $table->string('especificacionProducto');
+            
         });
     }
 

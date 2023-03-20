@@ -22,11 +22,19 @@ class Productos extends Controller
     public function add(Request $request)
     {
         $producto = new \App\Models\Productos();
-        $producto->nombre = $request->nombre;
-        $producto->descripcion = $request->descripcion;
-        $producto->precio = $request->precio;
+        $producto->nombreProducto = $request->NombreInput;
+        $producto->descripcionProducto = $request->DescripcionInput;
+        $producto->precioProducto = $request->PrecioInput;
+        $producto->noPiezaInterna = $request->NumeroPiezaInternaInput;
+        $producto->cantidadProducto = $request->CantidadInput;
+        $producto->especificacionProducto = $request->EspecificacionesInput;
+        // Guardar la imagen
+        $producto->dibujoProducto = $request->file('ImagenInput')->store('public');
+
+
+
         $producto->save();
-        return redirect()->route('productos.index');
+        return redirect()->route('admin.productos');
     }
 
     // Metodo para editar un producto

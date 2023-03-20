@@ -56,13 +56,13 @@ Route::get('/productos/{id}', 'App\Http\Controllers\Productos@showProducto');
 
 
 //Rutas para Administrador para gestionar productos
-Route::get('/admin/productos', 'App\Http\Controllers\Admin\Productos@index');
-Route::get('/admin/productos/add', 'App\Http\Controllers\Admin\Productos@showRegistroProducto');
-Route::post('/admin/productos/add', 'App\Http\Controllers\Admin\Productos@add') -> name('admin.productos.add');
-Route::get('/admin/productos/{id}', 'App\Http\Controllers\Admin\Productos@showProducto');
-Route::get('/admin/productos/edit/{id}', 'App\Http\Controllers\Admin\Productos@showEditProducto');
-Route::post('/admin/productos/edit/{id}', 'App\Http\Controllers\Admin\Productos@edit') -> name('admin.productos.edit');
-Route::get('/admin/productos/delete/{id}', 'App\Http\Controllers\Admin\Productos@delete');
+Route::get('/admin/productos', 'App\Http\Controllers\Productos@index') -> name('admin.productos');
+Route::get('/admin/productos/add', 'App\Http\Controllers\Productos@showRegistroProducto');
+Route::post('/admin/productos/add', 'App\Http\Controllers\Productos@add') -> name('admin.productos.add');
+Route::get('/admin/productos/{id}', 'App\Http\Controllers\Productos@showProducto') -> name('admin.productos.show');
+Route::get('/admin/productos/edit/{id}', 'App\Http\Controllers\Productos@showEditProducto');
+Route::post('/admin/productos/edit/{id}', 'App\Http\Controllers\Productos@edit') -> name('admin.productos.edit');
+Route::get('/admin/productos/delete/{id}', 'App\Http\Controllers\Productos@delete');
 
 
 

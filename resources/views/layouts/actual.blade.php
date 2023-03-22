@@ -41,9 +41,9 @@
         <section style="background: #c99d84;">
             <div class="container">
                 @yield('content')
-</div>
+            </div>
         </section>
-        <footer class="footer-dark" style="background: #851e39;">
+        <footer class="footer-dark fixed-bottom" style="background: #851e39;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-3 text-center align-self-center item">

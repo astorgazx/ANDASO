@@ -63,6 +63,14 @@ class Productos extends Controller
         return redirect()->route('productos.index');
     }
 
+    // Metodo para eliminar un producto
+    public function delete($id)
+    {
+        $producto = \App\Models\Productos::find($id);
+        $producto->delete();
+        return redirect()->route('productos.index');
+    }
+
 
 
 

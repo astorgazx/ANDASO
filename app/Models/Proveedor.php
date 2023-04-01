@@ -38,7 +38,7 @@ class Proveedor extends Model implements Authenticatable
     ];
 
     protected $fillable = [
-        'idProveedor',
+        
         'nombreFiscalProveedor',
         'paisProveedor',
         'estadoProveedor',

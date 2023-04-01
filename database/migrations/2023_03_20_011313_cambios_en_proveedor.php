@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::table('Proveedor', function (Blueprint $table) {
             //
 
-            $table->string('nombreFiscalProveedor');
-            $table->string('paisProveedor');
-            $table->string('estadoProveedor');
-            $table->string('ciudadProveedor');
-            $table->string('calleProveedor');
-            $table->string('noExteriorProveedor');
-            $table->string('noInteriorProveedor');
-            $table->string('codPostalProveedor');
-            $table->string('rfcProveedor');
-            $table->string('immexProveedor');
-            $table->string('repaeProveedor');
-            $table->string('taxIDProveedor');
+            $table->string('nombreFiscalProveedor')->nullable();
+            $table->string('paisProveedor')->nullable();
+            $table->string('estadoProveedor')->nullable();
+            $table->string('ciudadProveedor')->nullable();
+            $table->string('calleProveedor')->nullable();
+            $table->string('noExteriorProveedor')->nullable();
+            $table->string('noInteriorProveedor')->nullable();
+            $table->string('codPostalProveedor')->nullable();
+            $table->string('rfcProveedor')->nullable();
+            $table->string('immexProveedor')->nullable();
+            $table->string('repaeProveedor')->nullable();
+            $table->string('taxIDProveedor')->nullable();
 
 
         });
@@ -37,7 +37,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('Proveedor', function (Blueprint $table) {
-            
+
             $table->dropColumn('nombreFiscalProveedor');
             $table->dropColumn('paisProveedor');
             $table->dropColumn('estadoProveedor');
